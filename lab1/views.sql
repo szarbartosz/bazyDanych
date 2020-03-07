@@ -1,6 +1,6 @@
---Views
+--VIEWS
 --a) RzerwacjeWszystkie(kraj,data, nazwa_wycieczki, imie, nazwisko,status_rezerwacji)
-CREATE VIEW RezerwacjeWszystkie
+CREATE VIEW REZERWACJE_WSZYSTKIE
     AS
         SELECT
             w.NAZWA,
@@ -13,10 +13,10 @@ CREATE VIEW RezerwacjeWszystkie
             JOIN REZERWACJE r ON w.ID_WYCIECZKI = r.ID_WYCIECZKI
             JOIN OSOBY o ON r.ID_OSOBY = o.ID_OSOBY;
 
-SELECT * FROM RezerwacjeWszystkie;
+SELECT * FROM REZERWACJE_WSZYSTKIE;
 
 --b) RezerwacjePotwierdzone (kraj,data, nazwa_wycieczki, imie, nazwisko,status_rezerwacji)
-CREATE VIEW RezerwacjePotwierdzone
+CREATE VIEW REZERWACJE_POTWIERDZONE
     AS
         SELECT
             w.NAZWA,
@@ -30,10 +30,10 @@ CREATE VIEW RezerwacjePotwierdzone
             JOIN OSOBY o ON r.ID_OSOBY = o.ID_OSOBY
         WHERE r.STATUS LIKE 'P' OR r.STATUS LIKE 'Z';
 
-SELECT * FROM RezerwacjePotwierdzone;
+SELECT * FROM REZERWACJE_POTWIERDZONE;
 
 --c) RezerwacjeWPrzyszlosci (kraj,data, nazwa_wycieczki, imie, nazwisko,status_rezerwacji)
-CREATE VIEW RezerwacjeWPrzyszlosci
+CREATE VIEW REZERWACJE_W_PRZYSZLOSCI
     AS
         SELECT
             w.NAZWA,
@@ -47,15 +47,27 @@ CREATE VIEW RezerwacjeWPrzyszlosci
             JOIN OSOBY o ON r.ID_OSOBY = o.ID_OSOBY
         WHERE w.DATA > CURRENT_DATE;
 
-SELECT * FROM RezerwacjeWPrzyszlosci;
+SELECT * FROM REZERWACJE_W_PRZYSZLOSCI;
 
 -- d) WycieczkiMiejsca(kraj,data, nazwa_wycieczki,liczba_miejsc, liczba_wolnych_miejsc)
-CREATE VIEW WycieczkiMiejsca
+CREATE VIEW WYCIECZKI_MIEJSCA
     AS
         SELECT
             w.KRAJ,
             w.DATA,
             w.NAZWA,
             w.LICZBA_MIEJSC,
-            SELECT w.LICZBA_MIEJSC - (SELECT COUNT(*) FROM REZERWACJE r
-                                      INNER JOIN WYCIECZKI W ON r.ID_WYCIECZKI = W.ID_WYCIECZ
+            w.LICZBA_MIEJSC - (SELECT COUNT(*)
+                               FROM REZERWACJE r
+                               WHERE w.ID_WYCIECZKI = r.ID_WYCIECZKI AND r.STATUS <> 'A') WOLNE_MIEJSCA
+        FROM WYCIECZKI w;
+SELECT * FROM WYCIECZKI_MIEJSCA;
+
+-- e) WycieczkiDostepne(kraj,data, nazwa_wycieczki,liczba_miejsc, liczba_wolnych_miejsc)
+CREATE VIEW WYCIECZKI_DOSTEPNE
+    AS
+        SELECT *
+        FROM WYCIECZKI_MIEJSCA wm
+        WHERE wm.DATA > CURRENT_DATE AND wm.WOLNE_MIEJSCA > 0;
+
+SELECT * FROM WYCIECZKI_DOSTEPNE;
