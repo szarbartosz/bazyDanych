@@ -1,0 +1,50 @@
+-- 1) triger obsługujący dodanie rezerwacji
+CREATE OR REPLACE TRIGGER DODANIE_REZERWACJI
+    AFTER INSERT
+    ON REZERWACJE
+    FOR EACH ROW
+    BEGIN
+        INSERT INTO REZERWACJE_LOG(NR_REZERWACJI, DATA, STATUS)
+        VALUES(:NEW.NR_REZERWACJI, CURRENT_DATE, :NEW.STATUS);
+        UPDATE WYCIECZKI w
+        SET w.WOLNE_MIEJSCA = w.WOLNE_MIEJSCA -1
+        WHERE w.ID_WYCIECZKI = :NEW.ID_WYCIECZKI;
+    END;
+
+-- 2) triger obsługujący zmianę statusu
+CREATE OR REPLACE TRIGGER ZMIANA_STAUTSU
+    AFTER UPDATE
+    ON REZERWACJE
+    FOR EACH ROW
+    DECLARE new_place INT;
+    BEGIN
+        INSERT INTO REZERWACJE_LOG(NR_REZERWACJI, DATA, STATUS)
+        VALUES(:NEW.NR_REZERWACJI, CURRENT_DATE, :NEW.STATUS);
+        IF :NEW.STATUS = 'A' THEN
+            new_place := 1;
+        ELSE
+            new_place := 0;
+        END IF;
+        UPDATE WYCIECZKI w
+        SET w.WOLNE_MIEJSCA = w.WOLNE_MIEJSCA + new_place
+        WHERE w.ID_WYCIECZKI = :NEW.ID_WYCIECZKI;
+    END;
+
+-- 3) triger zabraniający usunięcia rezerwacji
+CREATE OR REPLACE TRIGGER BLOKADA_USUNIECIA_REZERWACJI
+    BEFORE DELETE
+    ON REZERWACJE
+    FOR EACH ROW
+    BEGIN
+       RAISE_APPLICATION_ERROR(-20000, 'Nie mozna usunac rezerwacji, mozna jedynie zmienic jej status na anulowana');
+    END;
+
+-- 4) triger obsługujący zmianę liczby miejsc na poziomie wycieczki
+CREATE OR REPLACE TRIGGER ZMIANA_LICZBY_MIEJSC
+    AFTER UPDATE OF LICZBA_MIEJSC
+    ON WYCIECZKI
+    FOR EACH ROW
+    BEGIN
+        UPDATE WYCIECZKI
+        SET WOLNE_MIEJSCA = WOLNE_MIEJSCA + (:NEW.LICZBA_MIEJSC - LICZBA_MIEJSC);
+    END;

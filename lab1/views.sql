@@ -61,6 +61,20 @@ CREATE VIEW WYCIECZKI_MIEJSCA
                                FROM REZERWACJE r
                                WHERE w.ID_WYCIECZKI = r.ID_WYCIECZKI AND r.STATUS <> 'A') WOLNE_MIEJSCA
         FROM WYCIECZKI w;
+
+SELECT * FROM WYCIECZKI_MIEJSCA;
+
+-- d)'
+CREATE VIEW WYCIECZKI_MIEJSCA2
+    AS
+        SELECT
+            w.KRAJ,
+            w.DATA,
+            w.NAZWA,
+            w.LICZBA_MIEJSC,
+            w.WOLNE_MIEJSCA
+        FROM WYCIECZKI w;
+
 SELECT * FROM WYCIECZKI_MIEJSCA;
 
 -- e) WycieczkiDostepne(kraj,data, nazwa_wycieczki,liczba_miejsc, liczba_wolnych_miejsc)
@@ -69,5 +83,12 @@ CREATE VIEW WYCIECZKI_DOSTEPNE
         SELECT *
         FROM WYCIECZKI_MIEJSCA wm
         WHERE wm.DATA > CURRENT_DATE AND wm.WOLNE_MIEJSCA > 0;
+
+-- e)'
+CREATE VIEW WYCIECZKI_DOSTEPNE2
+    AS
+        SELECT *
+        FROM WYCIECZKI_MIEJSCA wm
+        WHERE wm.WOLNE_MIEJSCA > 0;
 
 SELECT * FROM WYCIECZKI_DOSTEPNE;
