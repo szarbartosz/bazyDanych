@@ -1,19 +1,15 @@
 import com.mongodb.client.*;
-import com.mongodb.Block;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Accumulators;
-
 import com.mongodb.client.model.Sorts;
 import org.bson.Document;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 
-public class MongoDB {
+public class MongoLab {
     MongoClient client = MongoClients.create();
     MongoDatabase database = client.getDatabase("BartoszSzar_wt1115_B");
 
