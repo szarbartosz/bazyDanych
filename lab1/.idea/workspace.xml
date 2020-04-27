@@ -18,7 +18,30 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Product.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Product.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Product.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Product.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Companies: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ProjectId" id="1YckKC2Et4oL9F7k9r2mXrYwwl9" />
@@ -29,7 +52,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DBE.Init.BalloonShown" value="true" />
-    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="DatabaseDriversLRU" value="oracle&#10;sqlite" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ServiceViewManager">
@@ -40,7 +64,12 @@
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@dbmanage.lab.ki.agh.edu.pl" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="root:Product.db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:Product.db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@2adcf103" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -50,9 +79,44 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="442" y="141" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588010212435">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="442" y="141" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588010212435" />
+    <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841301100" />
+    <state x="249" y="173" key="FileChooserDialogImpl" timestamp="1588010210600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="173" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588010210600" />
+    <state x="2231" y="218" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841297327" />
+    <state width="1014" height="287" key="GridCell.Tab.0.bottom" timestamp="1587996109646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="287" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1587996109646" />
+    <state width="1281" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841331513" />
+    <state width="1014" height="287" key="GridCell.Tab.0.center" timestamp="1587996109646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="287" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1587996109646" />
+    <state width="1281" height="290" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841331513" />
+    <state width="1014" height="287" key="GridCell.Tab.0.left" timestamp="1587996109646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="287" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1587996109646" />
+    <state width="1281" height="290" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841331513" />
+    <state width="1014" height="287" key="GridCell.Tab.0.right" timestamp="1587996109646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="287" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1587996109646" />
+    <state width="1281" height="290" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841331513" />
     <state width="199" height="457" key="HiddenNamespacesPopup" timestamp="1586551020640">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="199" height="457" key="HiddenNamespacesPopup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586551020640" />
+    <state x="525" y="273" key="com.intellij.ide.util.TipDialog" timestamp="1588010178616">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="525" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588010178616" />
+    <state x="2576" y="344" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587841260567" />
   </component>
 </project>
