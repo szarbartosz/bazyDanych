@@ -1,0 +1,10 @@
+cmd:
+
+cd C:\Users\Lenovo\Desktop\inf\semestr_4\Bazy Danych\db-lab\lab4\db-derby-10.15.2.0-bin\bin
+start startNetworkServer
+
+cmd2:
+
+cd C:\Users\Lenovo\Desktop\inf\semestr_4\Bazy Danych\db-lab\lab4\db-derby-10.15.2.0-bin\bin
+start ij
+connect 'jdbc:derby://127.0.0.1/BSzarJPA';

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!--        <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>-->
+        <!--        <property name="connection.url">jdbc:derby://127.0.0.1/BSzarJPA</property>-->
+        <!--        <property name="connection.driver_class">org.sqlite.JDBC</property>-->
+        <property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+        <property name="connection.url">jdbc:derby://127.0.0.1/BSzarJPA</property>
+        <property name="connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="Product"/>
+        <mapping class="Supplier"/>
+        <mapping class="Category"/>
+        <mapping class="Invoice"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
