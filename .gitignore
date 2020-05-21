@@ -1,7 +1,16 @@
 /lab1/.idea/*
+/lab1/.idea
 /lab2/mongo-lab/.idea
 /lab2/mongo-lab/target
 /lab2/mongo-lab/mongo-lab.iml
 /lab2/mongo-lab/pom.xml
 /lab2/yelp_dataset
 /lab2/JEOPARDY_QUESTIONS1.json
+/lab4/BSzarJPAPractice/.idea
+/lab4/BSzarJPAPractice/lib
+/lab4/BSzarJPAPractice/BSzarJPAPractice.iml
+/lab4/BSzarJPAPractice/out
+/lab4/db-derby-10.15.2.0-bin
+/lab4/jar_dependencies
+/lab4/sqlite-tools-win32-x86-3310100
+/lab4/.idea
