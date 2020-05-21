@@ -96,7 +96,29 @@ etcdCreds = {
 ```python
 !pip install etcd3
 ```
-
+```python
+Collecting etcd3
+  Downloading https://files.pythonhosted.org/packages/9c/eb/6d1ef4d6a3e8b74e45c502cbd3ea6c5c6c786d003829db9369c2530f5e3f/etcd3-0.12.0.tar.gz (63kB)
+     |████████████████████████████████| 71kB 20.2MB/s eta 0:00:01
+Collecting grpcio>=1.27.1 (from etcd3)
+  Downloading https://files.pythonhosted.org/packages/cd/04/2b67f0a3645481235d5547891fd0e45e384f1ae5676788f24a7c8735b4e9/grpcio-1.29.0-cp36-cp36m-manylinux2010_x86_64.whl (3.0MB)
+     |████████████████████████████████| 3.0MB 23.4MB/s eta 0:00:01
+Requirement already satisfied: protobuf>=3.6.1 in /opt/conda/envs/Python36/lib/python3.6/site-packages (from etcd3) (3.6.1)
+Requirement already satisfied: six>=1.12.0 in /opt/conda/envs/Python36/lib/python3.6/site-packages (from etcd3) (1.12.0)
+Collecting tenacity>=6.1.0 (from etcd3)
+  Downloading https://files.pythonhosted.org/packages/b5/05/ff089032442058bd3386f9cd991cd88ccac81dca1494d78751621ee35e62/tenacity-6.2.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /opt/conda/envs/Python36/lib/python3.6/site-packages (from protobuf>=3.6.1->etcd3) (40.8.0)
+Building wheels for collected packages: etcd3
+  Building wheel for etcd3 (setup.py) ... done
+  Stored in directory: /home/dsxuser/.cache/pip/wheels/a8/36/b5/cabe849e7cb6e1c273ca48946b825d6f6f5271017c8497d7ea
+Successfully built etcd3
+ERROR: tensorflow 1.13.1 requires tensorboard<1.14.0,>=1.13.0, which is not installed.
+Installing collected packages: grpcio, tenacity, etcd3
+  Found existing installation: grpcio 1.16.1
+    Uninstalling grpcio-1.16.1:
+      Successfully uninstalled grpcio-1.16.1
+Successfully installed etcd3-0.12.0 grpcio-1.29.0 tenacity-6.2.0
+```
 ### How to connect to etcd using certyficate (part 1: prepare file with certificate)
 
 ```python
